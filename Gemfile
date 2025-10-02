@@ -40,4 +40,16 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "rack-cors"
+
+  group :development, :test do
+    gem "rspec-rails", "~> 8.0.0"
+  end
+
+  group :development, :test do
+    gem "factory_bot_rails"
+  end
+
+  group :test do
+    gem "shoulda-matchers", "~> 5.0"
+  end
 end
