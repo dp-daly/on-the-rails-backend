@@ -1,9 +1,30 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+puts "Seeding resources..."
+
+resources = [
+  {
+    title: "Rails Guides",
+    description: "Comprehensive guides for Ruby on Rails.",
+    link: "https://guides.rubyonrails.org/"
+  },
+  {
+    title: "Ruby Documentation",
+    description: "Official Ruby language documentation.",
+    link: "https://www.ruby-lang.org/en/documentation/"
+  },
+  {
+    title: "PostgreSQL Tutorial",
+    description: "Learn PostgreSQL with practical examples.",
+    link: "https://www.postgresqltutorial.com/"
+  },
+  {
+    title: "JSON API Specification",
+    description: "A standard for building APIs in JSON.",
+    link: "https://jsonapi.org/"
+  }
+]
+
+resources.each do |resource_data|
+  Resource.create!(resource_data)
+end
+
+puts "Seeding complete!"
