@@ -1,4 +1,4 @@
-puts "Seeding resources..."
+puts "Seeding resources... 🌱"
 
 resources = [
   {
@@ -27,4 +27,4 @@ resources.each do |resource_data|
   Resource.create!(resource_data)
 end
 
-puts "Seeding complete!"
+puts "Seeding complete! 🏆"
