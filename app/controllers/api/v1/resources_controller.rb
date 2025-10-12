@@ -17,7 +17,7 @@ class Api::V1::ResourcesController < ApplicationController
     if @resource.save
       render json: @resource, status: :created, location: api_v1_resource_path(@resource)
     else
-      render json: @resource.errors, status: :unprocessable_entity
+      render json: @resource.errors, status: :unprocessable_content
     end
   end
 
@@ -25,7 +25,7 @@ class Api::V1::ResourcesController < ApplicationController
     if @resource.update(resource_params)
       render json: @resource
     else
-      render json: @resource.errors, status: :unprocessable_entity
+      render json: @resource.errors, status: :unprocessable_content
     end
   end
 

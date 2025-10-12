@@ -38,7 +38,7 @@ RSpec.describe 'Api::V1::Resources', type: :request do
 
     it 'returns errors with invalid params' do
       post '/api/v1/resources', params: invalid_params
-      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response).to have_http_status(:unprocessable_content)
     end
   end
 
@@ -53,7 +53,7 @@ RSpec.describe 'Api::V1::Resources', type: :request do
 
     it 'returns errors with invalid params' do
       put "/api/v1/resources/#{resource.id}", params: { resource: { title: '' } }
-      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response).to have_http_status(:unprocessable_content)
     end
   end
 
