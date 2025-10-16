@@ -8,7 +8,9 @@ RSpec.describe 'Api::V1::Resources', type: :request do
     end
 
     it 'returns all resources' do
-      resources = create_list(:resource, 3)
+      create(:resource, title: 'Unique Title 1', link: 'Unique Link 1')
+      create(:resource, title: 'Unique Title 2', link: 'Unique Link 2')
+      create(:resource, title: 'Unique Title 3', link: 'Unique Link 3')
       get '/api/v1/resources'
       json = JSON.parse(response.body)
       expect(json.size).to eq(3)
